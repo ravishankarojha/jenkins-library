@@ -84,23 +84,23 @@ void call(Map parameters = [:]) {
                 error "Property 'ID' not found in ${mtaYamlName} file."
             }
 
-            def mtarFileName = "${id}.mtar"
+            //def mtarFileName = "${id}.mtar"
             // If it is not configured, it is expected on the PATH
-            def mtaJar = 'java -jar '
-            mtaJar += configuration.mtaJarLocation ?: 'mta.jar'
-            def buildTarget = configuration.buildTarget
+            //def mtaJar = 'java -jar '
+           // mtaJar += configuration.mtaJarLocation ?: 'mta.jar'
+           // def buildTarget = configuration.buildTarget
 
-            def mtaCall = "${mtaJar} --mtar ${mtarFileName} --build-target=${buildTarget}"
+           // def mtaCall = "${mtaJar} --mtar ${mtarFileName} --build-target=${buildTarget}"
 
-            if (configuration.extension) mtaCall += " --extension=$configuration.extension"
-            mtaCall += ' build'
+           // if (configuration.extension) mtaCall += " --extension=$configuration.extension"
+           // mtaCall += ' build'
 
-            echo "[INFO] Executing mta build call: '${mtaCall}'."
+           // echo "[INFO] Executing mta build call: '${mtaCall}'."
 
-            sh """#!/bin/bash
-            export HOME=/lib
-            export PATH=./node_modules/.bin:${PATH}
-            $mtaCall
+           // sh """#!/bin/bash
+           // export HOME=/lib
+           // export PATH=./node_modules/.bin:${PATH}
+           // $mtaCall
             """
 
             script?.commonPipelineEnvironment?.setMtarFilePath(mtarFileName)
