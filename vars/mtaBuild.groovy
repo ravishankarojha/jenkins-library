@@ -86,7 +86,8 @@ void call(Map parameters = [:]) {
 
             def mtarFileName = "${id}.mtar"
             // If it is not configured, it is expected on the PATH
-            def mtaJar = 'java -jar '
+            //def mtaJar = 'java -jar '
+            def mtaJar = '/usr/bin/java -jar '
             mtaJar += configuration.mtaJarLocation ?: 'mta.jar'
             def buildTarget = configuration.buildTarget
 
