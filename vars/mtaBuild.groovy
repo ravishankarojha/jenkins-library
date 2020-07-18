@@ -99,7 +99,7 @@ void call(Map parameters = [:]) {
 
             sh """#!/bin/bash
             export HOME=/hana/backup
-            export PATH=./node_modules/.bin:/usr/bin:${PATH}
+            export PATH=./node_modules/.bin:${PATH}
             $mtaCall
             """
 
